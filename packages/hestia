@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+
+
+outfile="/tmp/install.sh"
+url="https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh"
+wget $url -O $outfile
+
+# https://raw.githubusercontent.com/hestiacp/hestiacp/release/install/hst-install.sh -O /tmp/install.sh
+chmod +X $outfile && bash $outfile
