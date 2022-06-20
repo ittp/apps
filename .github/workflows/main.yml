@@ -17,7 +17,13 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
-
+  install: 
+   runs-on: ubuntu-latest
+   steps:
+     prerun:
+       uses: @ittp/apps
+         run: echo 1
+  # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -39,7 +45,13 @@ jobs:
           echo "Date: \t $(date --utc) > config/date
           echo "powershell" > config/install
           
-          
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.0
+        with:
+          # Artifact name
+          name: www/index.html # optional
+          # Destination path
+          path: ~/www/index.html # optional
         
       - name: HTML Preview
   # You may pin to the exact commit or the version.
@@ -54,3 +66,18 @@ jobs:
         with:
     # The HTML file you want to preview, relative to the root of the repo
           html_file: index.html # default is index.htmltml_file: # default is index.html
+     - name: SSH Action
+      # You may pin to the exact commit or the version.
+      # uses: invi5H/ssh-action@ece33b57060e562f8d17b6c20b715de95204bbf2
+      uses: invi5H/ssh-action@v1.0.0
+      with:
+        # A unique name for the server
+        NAME: data # optional, default is server
+        # The SSH username
+        SSH_USER: git
+        # The hostname or the IP address
+        SSH_HOST: ittps.ru
+        # The SSH port
+        SSH_PORT: 22 # optional, default is 22
+        # The full string SSH key
+        SSH_KEY: git
