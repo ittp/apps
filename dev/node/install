@@ -1,7 +1,0 @@
-#!/bin/env bash
-arch="all"
-version="lts"
-#path="/nodejs/lts/ubuntu"
-path="/nodejs/lts/install"
-
-ubuntu="20.04"

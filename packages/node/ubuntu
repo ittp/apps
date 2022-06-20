@@ -1,0 +1,6 @@
+#!/bin/env bash
+arch="all"
+version="lts"
+#path="/node/lts/ubuntu"
+path="/node/lts/install"
+
