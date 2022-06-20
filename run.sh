@@ -1,3 +1,3 @@
 echo "run"
 
-echo ${@a}
+packages=$(ls -la ./packages/*)
