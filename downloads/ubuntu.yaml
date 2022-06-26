@@ -1,0 +1,8 @@
+key: yandex
+location: ru
+baseurl='https://mirror.yandex.ru/'
+
+ubuntu-cloud: 'ubuntu-cloud-images/' 
+
+server: 'base/server/'
+
