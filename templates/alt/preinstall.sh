@@ -1,0 +1,3 @@
+# preinstall
+
+set apps=""
