@@ -1,0 +1,5 @@
+os="ubuntu"
+arch="amd64"
+version="1.995"
+pkg="deb"
+webmin="https://prdownloads.sourceforge.net/webadmin/webmin-1.995.tar.gz"
