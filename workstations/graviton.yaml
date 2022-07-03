@@ -1,0 +1,15 @@
+drive: ''
+paths:
+  etc: '/etc'
+  
+
+os: 'alt'
+arch: '64'
+version: 'workstations'
+repos: 'http://mirror.yandex.ru'
+browser: 
+  package: 'yandex-browser-stable'
+office: ''
+apps:
+  gnome
+
