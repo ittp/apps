@@ -1,12 +1,12 @@
-base:  
-  network: ''
+template:  
+  network: ${{ github.secrets.network }}
   sources: 'sources.list.d/ru.list'
   proxy: 
     enabled: true
     proto:
-      http: ''
-      https: ''
-      ftp: ''
+      http: ${{ github.secrets.proxy }}
+      https: ${{ github.secrets.proxy }}
+      ftp: ${{ github.secrets.proxy }}
   exclude: [ localhost, localnet, emts, uts ]  
 
 
