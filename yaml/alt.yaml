@@ -1,0 +1,13 @@
+base:  
+  network: ''
+  sources: 'sources.list.d/ru.list'
+  proxy: 
+    enabled: true
+    proto:
+      http: ''
+      https: ''
+      ftp: ''
+  exclude: [ localhost, localnet, emts, uts ]  
+
+
+  
