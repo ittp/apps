@@ -1,0 +1,35 @@
+# This is a basic workflow that is manually triggered
+name: tmate
+
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      actions:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'actions'
+        # Default value if no value is explicitly provided
+        default: 'World'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+    - name: connect
+      run: echo "123" 
+    - name: GitHub API exec action
+      # You may pin to the exact commit or the version.
+      # uses: moustacheful/github-api-exec-action@2135aaccb1220f81e6fa4f14c90cc20efba069fe
+      uses: moustacheful/github-api-exec-action@v0
+      with:
+        # Command to execute, (e.g: `pulls.create`), see https://octokit.github.io/rest.js/ for available commands
+        command: events.start
+        payload: '{}' # optional, default is {}
+        withRepo: ittp/apps # optional
+        # The path to obtain from the result, if needed. i.e.: labels.0.id, if missing, the output is the whole json, which you can later obtain via the [steps context](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions#steps-context) and parse using tools such as jq
+        resultPath: ~/ # optional
